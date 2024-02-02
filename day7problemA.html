@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Solving problems using array functions on rest countries data (https://restcountries.com/v3.1/all).
+      // Get all the countries from Asia continent /region using Filter function
+      var request = new XMLHttpRequest();
+      // Open a connection with the server
+      request.open("GET", "https://restcountries.com/v3.1/all");
+      // Send the request
+      request.send();
+      let newarr = [];
+      request.onload = function () {
+        var data = JSON.parse(request.response);
+        data.filter((item) => {
+          if (item.region === "Asia") {
+            newarr.push(item.name.common);
+          }
+        });
+        console.log(...newarr);
+      };
+      // output
+      //Laos Kuwait Sri Lanka China Bangladesh Turkey Singapore Iraq Brunei North Korea Iran Tajikistan Myanmar Afghanistan Cambodia India Saudi Arabia Qatar Syria Timor-Leste South Korea Maldives Kyrgyzstan Yemen Israel Hong Kong Bhutan Nepal United Arab Emirates Azerbaijan Palestine Taiwan Jordan Indonesia Lebanon Malaysia Armenia Mongolia Japan Philippines Macau Kazakhstan Oman Turkmenistan Georgia Thailand Bahrain Vietnam Uzbekistan Pakistan
+    </script>
+  </body>
+</html>

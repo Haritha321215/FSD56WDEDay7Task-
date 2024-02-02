@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Solving problems using array functions on rest countries data (https://restcountries.com/v3.1/all).
+
+      // Print the total population of countries using reduce function
+
+      var request = new XMLHttpRequest();
+      let newarr = [];
+      // Open a connection with the server
+      request.open("GET", "https://restcountries.com/v3.1/all");
+      // Send the request
+      request.send();
+      request.onload = function () {
+        var data = JSON.parse(request.response);
+        let sum = data
+          .map((element) => element.population)
+          .reduce((acc, curr) => acc + curr);
+        console.log(`Total Population of Countries: ${sum}`);
+      };
+      // out put
+      // Total Population of Countries: 7777721563
+    </script>
+  </body>
+</html>

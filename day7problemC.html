@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Solving problems using array functions on rest countries data (https://restcountries.com/v3.1/all).
+
+      // Print the following details name, capital, flag, using forEach function
+
+      
+      var request = new XMLHttpRequest();
+      // Open a connection with the server
+      request.open("GET", "https://restcountries.com/v3.1/all");
+      // Send the request
+      request.send();
+      request.onload = function () {
+        var data = JSON.parse(request.response);
+        data.forEach((element) => {
+            console.log(
+              `Country Name: ${element.name.common} - Capital: ${element.capital} - Flag: ${element.flag}`
+            );
+          });
+      };
+// output
+// day7problemC.html:23 Country Name: Andorra - Capital: Andorra la Vella - Flag: 🇦🇩
+// day7problemC.html:23 Country Name: French Southern and Antarctic Lands - Capital: Port-aux-Français - Flag: 🇹🇫
+// day7problemC.html:23 Country Name: Laos - Capital: Vientiane - Flag: 🇱🇦
+// day7problemC.html:23 Country Name: Canada - Capital: Ottawa - Flag: 🇨🇦
+// day7problemC.html:23 Country Name: Nigeria - Capital: Abuja - Flag: 🇳🇬
+// day7problemC.html:23 Country Name: Vanuatu - Capital: Port Vila - Flag: 🇻🇺
+// day7problemC.html:23 Country Name: Czechia - Capital: Prague - Flag: 🇨🇿
+// day7problemC.html:23 Country Name: Malawi - Capital: Lilongwe - Flag: 🇲🇼
+// day7problemC.html:23 Country Name: Mali - Capital: Bamako - Flag: 🇲🇱
+// day7problemC.html:23 Country Name: Iceland - Capital: Reykjavik - Flag: 🇮🇸
+// day7problemC.html:23 Country Name: Norway - Capital: Oslo - Flag: 🇳🇴
+// day7problemC.html:23 Country Name: Saint Vincent and the Grenadines - Capital: Kingstown - Flag: 🇻🇨
+// day7problemC.html:23 Country Name: Guadeloupe - Capital: Basse-Terre - Flag: 🇬🇵
+// day7problemC.html:23 Country Name: Chile - Capital: Santiago - Flag: 🇨🇱
+// day7problemC.html:23 Country Name: Bermuda - Capital: Hamilton - Flag: 🇧🇲
+// day7problemC.html:23 Country Name: Kuwait - Capital: Kuwait City - Flag: 🇰🇼
+// day7problemC.html:23 Country Name: Dominica - Capital: Roseau - Flag: 🇩🇲
+// day7problemC.html:23 Country Name: Montenegro - Capital: Podgorica - Flag: 🇲🇪
+// day7problemC.html:23 Country Name: United States Virgin Islands - Capital: Charlotte Amalie - Flag: 🇻🇮
+// day7problemC.html:23 Country Name: Cameroon - Capital: Yaoundé - Flag: 🇨🇲
+// day7problemC.html:23 Country Name: Sri Lanka - Capital: Sri Jayawardenepura Kotte - Flag: 🇱🇰
+// day7problemC.html:23 Country Name: China - Capital: Beijing - Flag: 🇨🇳
+// day7problemC.html:23 Country Name: Bangladesh - Capital: Dhaka - Flag: 🇧🇩
+// day7problemC.html:23 Country Name: Sweden - Capital: Stockholm - Flag: 🇸🇪
+// day7problemC.html:23 Country Name: Grenada - Capital: St. George's - Flag: 🇬🇩
+// day7problemC.html:23 Country Name: Turkey - Capital: Ankara - Flag: 🇹🇷
+// day7problemC.html:23 Country Name: Guinea - Capital: Conakry - Flag: 🇬🇳
+// day7problemC.html:23 Country Name: Tanzania - Capital: Dodoma - Flag: 🇹🇿
+// day7problemC.html:23 Country Name: Rwanda - Capital: Kigali - Flag: 🇷🇼
+// day7problemC.html:23 Country Name: Singapore - Capital: Singapore - Flag: 🇸🇬
+// day7problemC.html:23 Country Name: Morocco - Capital: Rabat - Flag: 🇲🇦
+// day7problemC.html:23 Country Name: Saint Barthélemy - Capital: Gustavia - Flag: 🇧🇱
+// day7problemC.html:23 Country Name: Iraq - Capital: Baghdad - Flag: 🇮🇶
+// day7problemC.html:23 Country Name: Brunei - Capital: Bandar Seri Begawan - Flag: 🇧🇳
+// day7problemC.html:23 Country Name: Isle of Man - Capital: Douglas - Flag: 🇮🇲
+// day7problemC.html:23 Country Name: North Korea - Capital: Pyongyang - Flag: 🇰🇵
+// day7problemC.html:23 Country Name: Iran - Capital: Tehran - Flag: 🇮🇷
+// day7problemC.html:23 Country Name: Curaçao - Capital: Willemstad - Flag: 🇨🇼
+// day7problemC.html:23 Country Name: Paraguay - Capital: Asunción - Flag: 🇵🇾
+// day7problemC.html:23 Country Name: Albania - Capital: Tirana - Flag: 🇦🇱
+// day7problemC.html:23 Country Name: Tajikistan - Capital: Dushanbe - Flag: 🇹🇯
+// day7problemC.html:23 Country Name: Bolivia - Capital: Sucre - Flag: 🇧🇴
+// day7problemC.html:23 Country Name: Austria - Capital: Vienna - Flag: 🇦🇹
+// day7problemC.html:23 Country Name: Saint Kitts and Nevis - Capital: Basseterre - Flag: 🇰🇳
+// day7problemC.html:23 Country Name: United States Minor Outlying Islands - Capital: Washington DC - Flag: 🇺🇲
+// day7problemC.html:23 Country Name: Colombia - Capital: Bogotá - Flag: 🇨🇴
+// day7problemC.html:23 Country Name: Kosovo - Capital: Pristina - Flag: 🇽🇰
+// day7problemC.html:23 Country Name: Belize - Capital: Belmopan - Flag: 🇧🇿
+// day7problemC.html:23 Country Name: Guinea-Bissau - Capital: Bissau - Flag: 🇬🇼
+// day7problemC.html:23 Country Name: Marshall Islands - Capital: Majuro - Flag: 🇲🇭
+// day7problemC.html:23 Country Name: Myanmar - Capital: Naypyidaw - Flag: 🇲🇲
+// day7problemC.html:23 Country Name: French Polynesia - Capital: Papeetē - Flag: 🇵🇫
+// day7problemC.html:23 Country Name: Brazil - Capital: Brasília - Flag: 🇧🇷
+// day7problemC.html:23 Country Name: Croatia - Capital: Zagreb - Flag: 🇭🇷
+// day7problemC.html:23 Country Name: Somalia - Capital: Mogadishu - Flag: 🇸🇴
+// day7problemC.html:23 Country Name: Afghanistan - Capital: Kabul - Flag: 🇦🇫
+// day7problemC.html:23 Country Name: Anguilla - Capital: The Valley - Flag: 🇦🇮
+// day7problemC.html:23 Country Name: Cook Islands - Capital: Avarua - Flag: 🇨🇰
+// day7problemC.html:23 Country Name: Western Sahara - Capital: El Aaiún - Flag: 🇪🇭
+// day7problemC.html:23 Country Name: New Zealand - Capital: Wellington - Flag: 🇳🇿
+// day7problemC.html:23 Country Name: Eritrea - Capital: Asmara - Flag: 🇪🇷
+// day7problemC.html:23 Country Name: Cambodia - Capital: Phnom Penh - Flag: 🇰🇭
+// day7problemC.html:23 Country Name: Bahamas - Capital: Nassau - Flag: 🇧🇸
+// day7problemC.html:23 Country Name: Belarus - Capital: Minsk - Flag: 🇧🇾
+// day7problemC.html:23 Country Name: Norfolk Island - Capital: Kingston - Flag: 🇳🇫
+// day7problemC.html:23 Country Name: Tuvalu - Capital: Funafuti - Flag: 🇹🇻
+// day7problemC.html:23 Country Name: South Georgia - Capital: King Edward Point - Flag: 🇬🇸
+// day7problemC.html:23 Country Name: Mauritania - Capital: Nouakchott - Flag: 🇲🇷
+// day7problemC.html:23 Country Name: New Caledonia - Capital: Nouméa - Flag: 🇳🇨
+// day7problemC.html:23 Country Name: Bulgaria - Capital: Sofia - Flag: 🇧🇬
+// day7problemC.html:23 Country Name: Mozambique - Capital: Maputo - Flag: 🇲🇿
+// day7problemC.html:23 Country Name: Niue - Capital: Alofi - Flag: 🇳🇺
+// day7problemC.html:23 Country Name: Estonia - Capital: Tallinn - Flag: 🇪🇪
+// day7problemC.html:23 Country Name: Italy - Capital: Rome - Flag: 🇮🇹
+// day7problemC.html:23 Country Name: Malta - Capital: Valletta - Flag: 🇲🇹
+// day7problemC.html:23 Country Name: Slovenia - Capital: Ljubljana - Flag: 🇸🇮
+// day7problemC.html:23 Country Name: India - Capital: New Delhi - Flag: 🇮🇳
+// day7problemC.html:23 Country Name: Peru - Capital: Lima - Flag: 🇵🇪
+// day7problemC.html:23 Country Name: Burundi - Capital: Gitega - Flag: 🇧🇮
+// day7problemC.html:23 Country Name: Lithuania - Capital: Vilnius - Flag: 🇱🇹
+// day7problemC.html:23 Country Name: United States - Capital: Washington, D.C. - Flag: 🇺🇸
+// day7problemC.html:23 Country Name: Honduras - Capital: Tegucigalpa - Flag: 🇭🇳
+// day7problemC.html:23 Country Name: Tonga - Capital: Nuku'alofa - Flag: 🇹🇴
+// day7problemC.html:23 Country Name: Saudi Arabia - Capital: Riyadh - Flag: 🇸🇦
+// day7problemC.html:23 Country Name: Suriname - Capital: Paramaribo - Flag: 🇸🇷
+// day7problemC.html:23 Country Name: Qatar - Capital: Doha - Flag: 🇶🇦
+// day7problemC.html:23 Country Name: Saint Helena, Ascension and Tristan da Cunha - Capital: Jamestown - Flag: 🇸🇭
+// day7problemC.html:23 Country Name: Gibraltar - Capital: Gibraltar - Flag: 🇬🇮
+// day7problemC.html:23 Country Name: Northern Mariana Islands - Capital: Saipan - Flag: 🇲🇵
+// day7problemC.html:23 Country Name: Mauritius - Capital: Port Louis - Flag: 🇲🇺
+// day7problemC.html:23 Country Name: Barbados - Capital: Bridgetown - Flag: 🇧🇧
+// day7problemC.html:23 Country Name: Réunion - Capital: Saint-Denis - Flag: 🇷🇪
+// day7problemC.html:23 Country Name: British Indian Ocean Territory - Capital: Diego Garcia - Flag: 🇮🇴
+// day7problemC.html:23 Country Name: Syria - Capital: Damascus - Flag: 🇸🇾
+// day7problemC.html:23 Country Name: Egypt - Capital: Cairo - Flag: 🇪🇬
+// day7problemC.html:23 Country Name: São Tomé and Príncipe - Capital: São Tomé - Flag: 🇸🇹
+// day7problemC.html:23 Country Name: Kiribati - Capital: South Tarawa - Flag: 🇰🇮
+// day7problemC.html:23 Country Name: Timor-Leste - Capital: Dili - Flag: 🇹🇱
+// day7problemC.html:23 Country Name: Lesotho - Capital: Maseru - Flag: 🇱🇸
+// day7problemC.html:23 Country Name: Solomon Islands - Capital: Honiara - Flag: 🇸🇧
+// day7problemC.html:23 Country Name: Libya - Capital: Tripoli - Flag: 🇱🇾
+// day7problemC.html:23 Country Name: South Korea - Capital: Seoul - Flag: 🇰🇷
+// day7problemC.html:23 Country Name: Liechtenstein - Capital: Vaduz - Flag: 🇱🇮
+// day7problemC.html:23 Country Name: Nicaragua - Capital: Managua - Flag: 🇳🇮
+// day7problemC.html:23 Country Name: Ecuador - Capital: Quito - Flag: 🇪🇨
+// day7problemC.html:23 Country Name: Maldives - Capital: Malé - Flag: 🇲🇻
+// day7problemC.html:23 Country Name: Algeria - Capital: Algiers - Flag: 🇩🇿
+// day7problemC.html:23 Country Name: Kyrgyzstan - Capital: Bishkek - Flag: 🇰🇬
+// day7problemC.html:23 Country Name: Finland - Capital: Helsinki - Flag: 🇫🇮
+// day7problemC.html:23 Country Name: Antarctica - Capital: undefined - Flag: 🇦🇶
+// day7problemC.html:23 Country Name: Kenya - Capital: Nairobi - Flag: 🇰🇪
+// day7problemC.html:23 Country Name: Cuba - Capital: Havana - Flag: 🇨🇺
+// day7problemC.html:23 Country Name: Montserrat - Capital: Plymouth - Flag: 🇲🇸
+// day7problemC.html:23 Country Name: Poland - Capital: Warsaw - Flag: 🇵🇱
+// day7problemC.html:23 Country Name: Åland Islands - Capital: Mariehamn - Flag: 🇦🇽
+// day7problemC.html:23 Country Name: Ethiopia - Capital: Addis Ababa - Flag: 🇪🇹
+// day7problemC.html:23 Country Name: Togo - Capital: Lomé - Flag: 🇹🇬
+// day7problemC.html:23 Country Name: Bosnia and Herzegovina - Capital: Sarajevo - Flag: 🇧🇦
+// day7problemC.html:23 Country Name: Uruguay - Capital: Montevideo - Flag: 🇺🇾
+// day7problemC.html:23 Country Name: Guam - Capital: Hagåtña - Flag: 🇬🇺
+// day7problemC.html:23 Country Name: Cape Verde - Capital: Praia - Flag: 🇨🇻
+// day7problemC.html:23 Country Name: Chad - Capital: N'Djamena - Flag: 🇹🇩
+// day7problemC.html:23 Country Name: Vatican City - Capital: Vatican City - Flag: 🇻🇦
+// day7problemC.html:23 Country Name: Palau - Capital: Ngerulmud - Flag: 🇵🇼
+// day7problemC.html:23 Country Name: Haiti - Capital: Port-au-Prince - Flag: 🇭🇹
+// day7problemC.html:23 Country Name: Yemen - Capital: Sana'a - Flag: 🇾🇪
+// day7problemC.html:23 Country Name: Eswatini - Capital: Mbabane - Flag: 🇸🇿
+// day7problemC.html:23 Country Name: Zimbabwe - Capital: Harare - Flag: 🇿🇼
+// day7problemC.html:23 Country Name: Greece - Capital: Athens - Flag: 🇬🇷
+// day7problemC.html:23 Country Name: Israel - Capital: Jerusalem - Flag: 🇮🇱
+// day7problemC.html:23 Country Name: Saint Martin - Capital: Marigot - Flag: 🇲🇫
+// day7problemC.html:23 Country Name: Antigua and Barbuda - Capital: Saint John's - Flag: 🇦🇬
+// day7problemC.html:23 Country Name: Cyprus - Capital: Nicosia - Flag: 🇨🇾
+// day7problemC.html:23 Country Name: Sint Maarten - Capital: Philipsburg - Flag: 🇸🇽
+// day7problemC.html:23 Country Name: Monaco - Capital: Monaco - Flag: 🇲🇨
+// day7problemC.html:23 Country Name: Fiji - Capital: Suva - Flag: 🇫🇯
+// day7problemC.html:23 Country Name: Ukraine - Capital: Kyiv - Flag: 🇺🇦
+// day7problemC.html:23 Country Name: Martinique - Capital: Fort-de-France - Flag: 🇲🇶
+// day7problemC.html:23 Country Name: Hong Kong - Capital: City of Victoria - Flag: 🇭🇰
+// day7problemC.html:23 Country Name: Portugal - Capital: Lisbon - Flag: 🇵🇹
+// day7problemC.html:23 Country Name: Bhutan - Capital: Thimphu - Flag: 🇧🇹
+// day7problemC.html:23 Country Name: Nepal - Capital: Kathmandu - Flag: 🇳🇵
+// day7problemC.html:23 Country Name: France - Capital: Paris - Flag: 🇫🇷
+// day7problemC.html:23 Country Name: Ireland - Capital: Dublin - Flag: 🇮🇪
+// day7problemC.html:23 Country Name: United Arab Emirates - Capital: Abu Dhabi - Flag: 🇦🇪
+// day7problemC.html:23 Country Name: Guernsey - Capital: St. Peter Port - Flag: 🇬🇬
+// day7problemC.html:23 Country Name: Saint Lucia - Capital: Castries - Flag: 🇱🇨
+// day7problemC.html:23 Country Name: Dominican Republic - Capital: Santo Domingo - Flag: 🇩🇴
+// day7problemC.html:23 Country Name: Serbia - Capital: Belgrade - Flag: 🇷🇸
+// day7problemC.html:23 Country Name: Botswana - Capital: Gaborone - Flag: 🇧🇼
+// day7problemC.html:23 Country Name: Ivory Coast - Capital: Yamoussoukro - Flag: 🇨🇮
+// day7problemC.html:23 Country Name: Ghana - Capital: Accra - Flag: 🇬🇭
+// day7problemC.html:23 Country Name: Comoros - Capital: Moroni - Flag: 🇰🇲
+// day7problemC.html:23 Country Name: Azerbaijan - Capital: Baku - Flag: 🇦🇿
+// day7problemC.html:23 Country Name: United Kingdom - Capital: London - Flag: 🇬🇧
+// day7problemC.html:23 Country Name: Central African Republic - Capital: Bangui - Flag: 🇨🇫
+// day7problemC.html:23 Country Name: Palestine - Capital: Ramallah,Jerusalem - Flag: 🇵🇸
+// day7problemC.html:23 Country Name: Caribbean Netherlands - Capital: Kralendijk - Flag: 🇧🇶
+// day7problemC.html:23 Country Name: Taiwan - Capital: Taipei - Flag: 🇹🇼
+// day7problemC.html:23 Country Name: Pitcairn Islands - Capital: Adamstown - Flag: 🇵🇳
+// day7problemC.html:23 Country Name: San Marino - Capital: City of San Marino - Flag: 🇸🇲
+// day7problemC.html:23 Country Name: Svalbard and Jan Mayen - Capital: Longyearbyen - Flag: 🇸🇯
+// day7problemC.html:23 Country Name: Djibouti - Capital: Djibouti - Flag: 🇩🇯
+// day7problemC.html:23 Country Name: Wallis and Futuna - Capital: Mata-Utu - Flag: 🇼🇫
+// day7problemC.html:23 Country Name: Denmark - Capital: Copenhagen - Flag: 🇩🇰
+// day7problemC.html:23 Country Name: Papua New Guinea - Capital: Port Moresby - Flag: 🇵🇬
+// day7problemC.html:23 Country Name: Madagascar - Capital: Antananarivo - Flag: 🇲🇬
+// day7problemC.html:23 Country Name: Bouvet Island - Capital: undefined - Flag: 🇧🇻
+// day7problemC.html:23 Country Name: Hungary - Capital: Budapest - Flag: 🇭🇺
+// day7problemC.html:23 Country Name: Tokelau - Capital: Fakaofo - Flag: 🇹🇰
+// day7problemC.html:23 Country Name: Trinidad and Tobago - Capital: Port of Spain - Flag: 🇹🇹
+// day7problemC.html:23 Country Name: Gambia - Capital: Banjul - Flag: 🇬🇲
+// day7problemC.html:23 Country Name: Luxembourg - Capital: Luxembourg - Flag: 🇱🇺
+// day7problemC.html:23 Country Name: Cocos (Keeling) Islands - Capital: West Island - Flag: 🇨🇨
+// day7problemC.html:23 Country Name: Republic of the Congo - Capital: Brazzaville - Flag: 🇨🇬
+// day7problemC.html:23 Country Name: Argentina - Capital: Buenos Aires - Flag: 🇦🇷
+// day7problemC.html:23 Country Name: DR Congo - Capital: Kinshasa - Flag: 🇨🇩
+// day7problemC.html:23 Country Name: Greenland - Capital: Nuuk - Flag: 🇬🇱
+// day7problemC.html:23 Country Name: Jordan - Capital: Amman - Flag: 🇯🇴
+// day7problemC.html:23 Country Name: Belgium - Capital: Brussels - Flag: 🇧🇪
+// day7problemC.html:23 Country Name: Switzerland - Capital: Bern - Flag: 🇨🇭
+// day7problemC.html:23 Country Name: Indonesia - Capital: Jakarta - Flag: 🇮🇩
+// day7problemC.html:23 Country Name: Lebanon - Capital: Beirut - Flag: 🇱🇧
+// day7problemC.html:23 Country Name: Malaysia - Capital: Kuala Lumpur - Flag: 🇲🇾
+// day7problemC.html:23 Country Name: Cayman Islands - Capital: George Town - Flag: 🇰🇾
+// day7problemC.html:23 Country Name: Slovakia - Capital: Bratislava - Flag: 🇸🇰
+// day7problemC.html:23 Country Name: Armenia - Capital: Yerevan - Flag: 🇦🇲
+// day7problemC.html:23 Country Name: Christmas Island - Capital: Flying Fish Cove - Flag: 🇨🇽
+// day7problemC.html:23 Country Name: Mongolia - Capital: Ulan Bator - Flag: 🇲🇳
+// day7problemC.html:23 Country Name: Saint Pierre and Miquelon - Capital: Saint-Pierre - Flag: 🇵🇲
+// day7problemC.html:23 Country Name: Japan - Capital: Tokyo - Flag: 🇯🇵
+// day7problemC.html:23 Country Name: South Africa - Capital: Pretoria,Bloemfontein,Cape Town - Flag: 🇿🇦
+// day7problemC.html:23 Country Name: Philippines - Capital: Manila - Flag: 🇵🇭
+// day7problemC.html:23 Country Name: Micronesia - Capital: Palikir - Flag: 🇫🇲
+// day7problemC.html:23 Country Name: Germany - Capital: Berlin - Flag: 🇩🇪
+// day7problemC.html:23 Country Name: Latvia - Capital: Riga - Flag: 🇱🇻
+// day7problemC.html:23 Country Name: Jamaica - Capital: Kingston - Flag: 🇯🇲
+// day7problemC.html:23 Country Name: Macau - Capital: undefined - Flag: 🇲🇴
+// day7problemC.html:23 Country Name: Nauru - Capital: Yaren - Flag: 🇳🇷
+// day7problemC.html:23 Country Name: Faroe Islands - Capital: Tórshavn - Flag: 🇫🇴
+// day7problemC.html:23 Country Name: Guyana - Capital: Georgetown - Flag: 🇬🇾
+// day7problemC.html:23 Country Name: Burkina Faso - Capital: Ouagadougou - Flag: 🇧🇫
+// day7problemC.html:23 Country Name: Sudan - Capital: Khartoum - Flag: 🇸🇩
+// day7problemC.html:23 Country Name: Russia - Capital: Moscow - Flag: 🇷🇺
+// day7problemC.html:23 Country Name: Mayotte - Capital: Mamoudzou - Flag: 🇾🇹
+// day7problemC.html:23 Country Name: Australia - Capital: Canberra - Flag: 🇦🇺
+// day7problemC.html:23 Country Name: Liberia - Capital: Monrovia - Flag: 🇱🇷
+// day7problemC.html:23 Country Name: Mexico - Capital: Mexico City - Flag: 🇲🇽
+// day7problemC.html:23 Country Name: Tunisia - Capital: Tunis - Flag: 🇹🇳
+// day7problemC.html:23 Country Name: Aruba - Capital: Oranjestad - Flag: 🇦🇼
+// day7problemC.html:23 Country Name: Kazakhstan - Capital: Nur-Sultan - Flag: 🇰🇿
+// day7problemC.html:23 Country Name: Oman - Capital: Muscat - Flag: 🇴🇲
+// day7problemC.html:23 Country Name: French Guiana - Capital: Cayenne - Flag: 🇬🇫
+// day7problemC.html:23 Country Name: Niger - Capital: Niamey - Flag: 🇳🇪
+// day7problemC.html:23 Country Name: Turkmenistan - Capital: Ashgabat - Flag: 🇹🇲
+// day7problemC.html:23 Country Name: Sierra Leone - Capital: Freetown - Flag: 🇸🇱
+// day7problemC.html:23 Country Name: Samoa - Capital: Apia - Flag: 🇼🇸
+// day7problemC.html:23 Country Name: Senegal - Capital: Dakar - Flag: 🇸🇳
+// day7problemC.html:23 Country Name: Georgia - Capital: Tbilisi - Flag: 🇬🇪
+// day7problemC.html:23 Country Name: Namibia - Capital: Windhoek - Flag: 🇳🇦
+// day7problemC.html:23 Country Name: South Sudan - Capital: Juba - Flag: 🇸🇸
+// day7problemC.html:23 Country Name: Thailand - Capital: Bangkok - Flag: 🇹🇭
+// day7problemC.html:23 Country Name: Bahrain - Capital: Manama - Flag: 🇧🇭
+// day7problemC.html:23 Country Name: Heard Island and McDonald Islands - Capital: undefined - Flag: 🇭🇲
+// day7problemC.html:23 Country Name: Falkland Islands - Capital: Stanley - Flag: 🇫🇰
+// day7problemC.html:23 Country Name: Jersey - Capital: Saint Helier - Flag: 🇯🇪
+// day7problemC.html:23 Country Name: Vietnam - Capital: Hanoi - Flag: 🇻🇳
+// day7problemC.html:23 Country Name: Guatemala - Capital: Guatemala City - Flag: 🇬🇹
+// day7problemC.html:23 Country Name: Moldova - Capital: Chișinău - Flag: 🇲🇩
+// day7problemC.html:23 Country Name: North Macedonia - Capital: Skopje - Flag: 🇲🇰
+// day7problemC.html:23 Country Name: Uzbekistan - Capital: Tashkent - Flag: 🇺🇿
+// day7problemC.html:23 Country Name: Romania - Capital: Bucharest - Flag: 🇷🇴
+// day7problemC.html:23 Country Name: Uganda - Capital: Kampala - Flag: 🇺🇬
+// day7problemC.html:23 Country Name: El Salvador - Capital: San Salvador - Flag: 🇸🇻
+// day7problemC.html:23 Country Name: Zambia - Capital: Lusaka - Flag: 🇿🇲
+// day7problemC.html:23 Country Name: Gabon - Capital: Libreville - Flag: 🇬🇦
+// day7problemC.html:23 Country Name: Equatorial Guinea - Capital: Malabo - Flag: 🇬🇶
+// day7problemC.html:23 Country Name: Spain - Capital: Madrid - Flag: 🇪🇸
+// day7problemC.html:23 Country Name: Netherlands - Capital: Amsterdam - Flag: 🇳🇱
+// day7problemC.html:23 Country Name: British Virgin Islands - Capital: Road Town - Flag: 🇻🇬
+// day7problemC.html:23 Country Name: Benin - Capital: Porto-Novo - Flag: 🇧🇯
+// day7problemC.html:23 Country Name: Pakistan - Capital: Islamabad - Flag: 🇵🇰
+// day7problemC.html:23 Country Name: Panama - Capital: Panama City - Flag: 🇵🇦
+// day7problemC.html:23 Country Name: Turks and Caicos Islands - Capital: Cockburn Town - Flag: 🇹🇨
+// day7problemC.html:23 Country Name: Angola - Capital: Luanda - Flag: 🇦🇴
+// day7problemC.html:23 Country Name: American Samoa - Capital: Pago Pago - Flag: 🇦🇸
+// day7problemC.html:23 Country Name: Venezuela - Capital: Caracas - Flag: 🇻🇪
+// day7problemC.html:23 Country Name: Costa Rica - Capital: San José - Flag: 🇨🇷
+// day7problemC.html:23 Country Name: Puerto Rico - Capital: San Juan - Flag: 🇵🇷
+// day7problemC.html:23 Country Name: Seychelles - Capital: Victoria - Flag: 🇸🇨
+// VM12:20  BA:false; available : undefined
+    </script>
+  </body>
+</html>

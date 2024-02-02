@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Solving problems using array functions on rest countries data (https://restcountries.com/v3.1/all).
+
+      // Get all the countries with a population of less than 2 lakhs using Filter function
+      console.log(
+        "-------------The countries with a population of less than 2 lakhs--------------------------------------"
+      );
+      var request = new XMLHttpRequest();
+      // Open a connection with the server
+      request.open("GET", "https://restcountries.com/v3.1/all");
+      // Send the request
+      request.send();
+      let newarr = [];
+      request.onload = function () {
+        var data = JSON.parse(request.response);
+        data.filter((item) => {
+          if (item.population < 200000) {
+            newarr.push(`${item.name.common} : ${item.population}`);
+          }
+        });
+        console.log(newarr);
+      };
+      //out put
+      //-------------The countries with a population of less than 2 lakhs-------------------------------------
+      // ['Andorra : 77265', 'French Southern and Antarctic Lands : 400', 'Saint Vincent and the Grenadines : 110947', 'Bermuda : 63903', 'Dominica : 71991', 'United States Virgin Islands : 106290', 'Grenada : 112519', 'Saint Barthélemy : 4255', 'Isle of Man : 85032', 'Curaçao : 155014', 'Saint Kitts and Nevis : 53192', 'United States Minor Outlying Islands : 300', 'Marshall Islands : 59194', 'Anguilla : 13452', 'Cook Islands : 18100', 'Norfolk Island : 2302', 'Tuvalu : 11792', 'South Georgia : 30', 'Niue : 1470', 'Tonga : 105697', 'Saint Helena, Ascension and Tristan da Cunha : 53192', 'Gibraltar : 33691', 'Northern Mariana Islands : 57557', 'British Indian Ocean Territory : 3000', 'Kiribati : 119446', 'Liechtenstein : 38137', 'Antarctica : 1000', 'Montserrat : 4922', 'Åland Islands : 29458', 'Guam : 168783', 'Vatican City : 451', 'Palau : 18092', 'Saint Martin : 38659', 'Antigua and Barbuda : 97928', 'Sint Maarten : 40812', 'Monaco : 39244', 'Guernsey : 62999', 'Saint Lucia : 183629', 'Caribbean Netherlands : 25987', 'Pitcairn Islands : 56', 'San Marino : 33938', 'Svalbard and Jan Mayen : 2562', 'Wallis and Futuna : 11750', 'Bouvet Island : 0', 'Tokelau : 1411', 'Cocos (Keeling) Islands : 544', 'Greenland : 56367', 'Cayman Islands : 65720', 'Christmas Island : 2072', 'Saint Pierre and Miquelon : 6069', 'Micronesia : 115021', 'Nauru : 10834', 'Faroe Islands : 48865', 'Aruba : 106766', 'Samoa : 198410', 'Heard Island and McDonald Islands : 0', 'Falkland Islands : 2563', 'Jersey : 100800', 'British Virgin Islands : 30237', 'Turks and Caicos Islands : 38718', 'American Samoa : 55197', 'Seychelles : 98462']
+    </script>
+  </body>
+</html>

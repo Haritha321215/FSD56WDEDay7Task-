@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Solving problems using array functions on rest countries data (https://restcountries.com/v3.1/all).
+      // Print the country that uses US dollars as currency.
+      var request = new XMLHttpRequest();
+      let newarr = [];
+      let arr = [];
+      // Open a connection with the server
+      request.open("GET", "https://restcountries.com/v3.1/all");
+      // Send the request
+      request.send();
+      request.onload = function () {
+        var data = JSON.parse(request.response);
+        console.log(data);
+        newarr = data.map((element) => {
+          for (const iter in element.currencies) {
+            if (element.currencies[iter].name === "United States dollar") {
+              console.log(
+                `${element.name.common}: ${element.currencies[iter].name}`
+              );
+            }
+          }
+        });
+      };
+
+      // output
+      // day7problemE.html:26 United States Virgin Islands: United States dollar
+      // day7problemE.html:26 United States Minor Outlying Islands: United States dollar
+      // day7problemE.html:26 Marshall Islands: United States dollar
+      // day7problemE.html:26 Cambodia: United States dollar
+      // day7problemE.html:26 Bahamas: United States dollar
+      // day7problemE.html:26 United States: United States dollar
+      // day7problemE.html:26 Northern Mariana Islands: United States dollar
+      // day7problemE.html:26 British Indian Ocean Territory: United States dollar
+      // day7problemE.html:26 Timor-Leste: United States dollar
+      // day7problemE.html:26 Ecuador: United States dollar
+      // day7problemE.html:26 Guam: United States dollar
+      // day7problemE.html:26 Palau: United States dollar
+      // day7problemE.html:26 Caribbean Netherlands: United States dollar
+      // day7problemE.html:26 Micronesia: United States dollar
+      // day7problemE.html:26 El Salvador: United States dollar
+      // day7problemE.html:26 British Virgin Islands: United States dollar
+      // day7problemE.html:26 Panama: United States dollar
+      // day7problemE.html:26 Turks and Caicos Islands: United States dollar
+      // day7problemE.html:26 American Samoa: United States dollar
+      // day7problemE.html:26 Puerto Rico: United States dollar
+    </script>
+  </body>
+</html>
